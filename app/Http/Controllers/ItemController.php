@@ -14,11 +14,11 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         $item = new Items([
-            'name' => $request->input('name'),
-            'detail' => $request->input('detail')
+            'name' => $request->input('nome'),
+            'preco' => $request->input('preco')
         ]);
         $item->save();
-        return response()->json('Items created!');
+        return response()->json('Item criado!');
     }
     public function show($id)
     {
@@ -29,12 +29,12 @@ class ItemController extends Controller
     {
         $item = Items::find($id);
         $item->update($request->all());
-        return response()->json('Items updated!');
+        return response()->json('Item atualizado!');
     }
     public function destroy($id)
     {
         $item = Items::find($id);
         $item->delete();
-        return response()->json('Items deleted!');
+        return response()->json('Items deletado!');
     }
 }

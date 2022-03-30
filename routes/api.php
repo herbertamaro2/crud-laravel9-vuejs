@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ItemsController;
+use App\Http\Controllers\ItemController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,5 +15,5 @@ use App\Http\Controllers\ItemsController;
 */
 
 Route::middleware('api')->group(function () {
-    Route::resource('items', ItemsController::class);
+    Route::resource('items', ItemController::class);
 });

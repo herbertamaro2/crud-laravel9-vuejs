@@ -5432,7 +5432,8 @@ __webpack_require__.r(__webpack_exports__);
     addProduct: function addProduct() {
       var _this = this;
 
-      this.axios.post('http://localhost:8000/api/items', this.items).then(function (response) {
+      console.log(this.item);
+      this.axios.post('http://localhost:8000/api/items', this.item).then(function (response) {
         return _this.$router.push({
           name: 'home'
         });
@@ -28572,19 +28573,19 @@ var render = function () {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.item.precos,
-                    expression: "item.precos",
+                    value: _vm.item.preco,
+                    expression: "item.preco",
                   },
                 ],
                 staticClass: "form-control",
                 attrs: { type: "text" },
-                domProps: { value: _vm.item.precos },
+                domProps: { value: _vm.item.preco },
                 on: {
                   input: function ($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.item, "precos", $event.target.value)
+                    _vm.$set(_vm.item, "preco", $event.target.value)
                   },
                 },
               }),

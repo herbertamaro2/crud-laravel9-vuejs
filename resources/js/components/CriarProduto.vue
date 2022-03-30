@@ -10,7 +10,7 @@
                     </div>
                     <div class="form-group">
                         <label>Ano</label>
-                        <input type="text" class="form-control" v-model="item.precos">
+                        <input type="text" class="form-control" v-model="item.preco">
                     </div>
                     <div class="form-group">
                         <label>Preços</label>
@@ -32,8 +32,9 @@
         },
         methods: {
             addProduct() {
+                console.log(this.item);
                 this.axios
-                    .post('http://localhost:8000/api/items', this.items)
+                    .post('http://localhost:8000/api/items', this.item)
                     .then(response => (
                         this.$router.push({ name: 'home' })
                     ))

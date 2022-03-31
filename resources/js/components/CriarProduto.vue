@@ -10,11 +10,11 @@
                     </div>
                     <div class="form-group">
                         <label>Ano</label>
-                        <input type="text" class="form-control" v-model="item.preco">
+                        <input type="text" class="form-control" v-model="item.preco.ano">
                     </div>
                     <div class="form-group">
                         <label>Preços</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="item.preco.preco">
                     </div>
                     <button type="submit" class="btn btn-primary">Criar</button>
                 </form>
@@ -27,11 +27,13 @@
     export default {
         data() {
             return {
-                item: {}
+                item: {nome: '', preco: {ano: '', preco: ''}}
             }
         },
         methods: {
             addProduct() {
+               // this.item.preco = this.item.preco;
+               // this.item.preco = Object.keys(this.item.preco).map((key) => [Number(key), this.item.preco[key]]);
                 console.log(this.item);
                 this.axios
                     .post('http://localhost:8000/api/items', this.item)

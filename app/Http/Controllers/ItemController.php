@@ -14,8 +14,8 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         $item = new Items([
-            'name' => $request->input('nome'),
-            'preco' => $request->input('preco')
+            'nome' => $request->nome,
+            'preco' => $request->preco
         ]);
         $item->save();
         return response()->json('Item criado!');

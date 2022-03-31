@@ -9,7 +9,10 @@ class Items extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nome', 
+        'nome',
         'preco'
+    ];
+    protected $casts = [
+        'preco' => 'array',
     ];
 }
